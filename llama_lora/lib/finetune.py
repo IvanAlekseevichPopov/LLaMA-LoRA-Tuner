@@ -246,7 +246,7 @@ def train(
     tokenizer.padding_side = "left"  # Allow batched inference
 
     try:
-        model = prepare_model_for_int8_training(model)
+        model = prepare_model_for_kbit_training(model)
     except Exception as e:
         print(
             f"Got error while running prepare_model_for_int8_training(model), maybe the model has already be prepared. Original error: {e}.")
